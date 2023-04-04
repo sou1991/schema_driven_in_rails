@@ -1,0 +1,1 @@
+# schema_driven_in_rails
