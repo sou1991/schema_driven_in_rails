@@ -1,1 +1,4 @@
-# schema_driven_in_rails
+# README
+
+### Swagger UI  
+http://localhost:3000/api-docs/index.html

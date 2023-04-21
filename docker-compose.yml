@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:9.6
+    ports:
+      - 5432:5432
+    volumes:
+      - db-store:/var/lib/postgresql/data
+    user: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  ror:
+    image: schema_driven_api
+    build:
+      context: .
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db
+    volumes:
+      - .:/ror
+    ports:
+      - "3000:3000"
+  # swagger-ui:
+  #   image: swaggerapi/swagger-ui
+  #   container_name: "swagger-ui"
+  #   ports:
+  #     - "8002:8080"
+  #   volumes:
+  #     - ./api/openapi.yaml:/openapi.yaml
+  #   environment:
+  #     SWAGGER_JSON: /openapi.yaml
+volumes:
+  db-store:
