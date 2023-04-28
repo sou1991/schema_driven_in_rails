@@ -22,6 +22,7 @@ services:
       - .:/ror
     ports:
       - "3000:3000"
+  # NOTE:ある程度RSpecで書けたらswaggerを独立させる
   # swagger-ui:
   #   image: swaggerapi/swagger-ui
   #   container_name: "swagger-ui"
