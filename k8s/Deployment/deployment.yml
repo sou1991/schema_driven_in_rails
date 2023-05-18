@@ -1,6 +1,6 @@
 apiVersion: apps/v1 
 kind: Deployment
-metadate: 
+metadata: 
   # Podの名前/deployment名
   name: ngin001dep
 spec: 
