@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: ngin001ser
+spec:
+  type: Nodepool
+  ports:
+    - port: 8099
+      # コンテナのport
+      tergetPort: 80
+      protocol: TCP
+      nodePort: 30080
+  selector:
+    # deploymentのmatchlabels
+    app: ngin001kube

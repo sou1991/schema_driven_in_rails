@@ -1,0 +1,23 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata: 
+  # Podの名前/deployment名
+  name: ngin001dep
+spec: 
+  #serviceと紐づく
+  selector:
+    matchlabels:
+      app: ngin001kube
+  replicas: 3
+  # podの情報
+  template:
+    metadate: 
+      # labelsはselectorで管理に必要
+      labels:
+        app: ngin001kube
+  spec:
+    containers:
+      - name: ngin001cn
+        image: nginx
+        ports:
+          containerPort: 80
