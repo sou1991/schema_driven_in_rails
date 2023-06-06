@@ -2,11 +2,7 @@ module Api
   module V1
     class ArticlesController < ApplicationController
       def index
-        articles = [
-          {name: 'hoge', age: 30}, 
-          {name: 'foo', age: 18}
-        ]
-
+        articles = Article.all
         render json: articles
       end
     end
