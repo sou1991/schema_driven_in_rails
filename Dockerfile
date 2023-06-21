@@ -10,7 +10,7 @@ WORKDIR /ror
 
 # Add Gemfile
 ADD Gemfile Gemfile
-# ADD Gemfile.lock Gemfile.lock
+ADD Gemfile.lock Gemfile.lock
 
 # Install Gemfile's bundle
 RUN bundle install
