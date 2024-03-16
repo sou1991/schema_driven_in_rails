@@ -22,15 +22,14 @@ services:
       - .:/ror
     ports:
       - "3000:3000"
-  # NOTE:ある程度RSpecで書けたらswaggerを独立させる
-  # swagger-ui:
-  #   image: swaggerapi/swagger-ui
-  #   container_name: "swagger-ui"
-  #   ports:
-  #     - "8002:8080"
-  #   volumes:
-  #     - ./api/openapi.yaml:/openapi.yaml
-  #   environment:
-  #     SWAGGER_JSON: /openapi.yaml
+  swagger-ui:
+    image: swaggerapi/swagger-ui:latest
+    container_name: "swagger-ui"
+    ports:
+      - "8002:8080"
+    volumes:
+      - ./swagger:/usr/share/nginx/html/swagger
+    environment:
+      API_URL: swagger/swagger.yaml
 volumes:
   db-store:
