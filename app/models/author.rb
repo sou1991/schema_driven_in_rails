@@ -7,6 +7,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Athor < ApplicationRecord
+class Author < ApplicationRecord
   has_many :articles
 end

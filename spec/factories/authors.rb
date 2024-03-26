@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: athors
+# Table name: authors
 #
 #  id         :bigint           not null, primary key
 #  name       :string
@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 FactoryBot.define do
-  factory :athor do
+  factory :author do
     name { "MyString" }
   end
 end

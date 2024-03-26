@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_16_030442) do
-
+ActiveRecord::Schema[7.1].define(version: 2023_05_16_030442) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,15 +18,15 @@ ActiveRecord::Schema.define(version: 2023_05_16_030442) do
     t.string "title"
     t.text "body"
     t.bigint "athor_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["athor_id"], name: "index_articles_on_athor_id"
   end
 
   create_table "athors", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
